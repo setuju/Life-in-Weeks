@@ -1,1 +1,72 @@
 @import "tailwindcss";
+
+@layer utilities {
+  /* Print Optimization */
+  @media print {
+    body {
+      background: #ffffff !important;
+      color: #111827 !important;
+      font-size: 11pt;
+    }
+
+    .no-print, 
+    nav, 
+    button:not(.print-include), 
+    .interactive-controls,
+    .tooltip-container {
+      display: none !important;
+    }
+
+    .print-only {
+      display: block !important;
+    }
+
+    .print-break-inside-avoid {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .print-page-break {
+      page-break-before: always;
+    }
+
+    /* Preserve colors on print */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .life-grid-container {
+      overflow: visible !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 auto !important;
+    }
+
+    .grid-cell-print {
+      width: 6px !important;
+      height: 6px !important;
+      border-radius: 1px !important;
+    }
+  }
+}
+
+/* Custom smooth scrolling for grid */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.45);
+}
