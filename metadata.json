@@ -1,0 +1,6 @@
+{
+  "name": "Life in Weeks",
+  "description": "Visualize your entire lifespan as a 105×52 grid, making time tangible and encouraging intentional living.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
